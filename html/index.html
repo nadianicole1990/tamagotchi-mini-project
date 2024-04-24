@@ -3,19 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
     <title>Tamagotchi Mini Project</title>
 </head>
 <body>
-    <div>
-        <button id = "feed">Feed</button>
-        <button id = "sleep">Sleep</button>
-        <button id = "play">Play</button>
+    <div class="container">
+        <div class="top">
+            <header>Nadagotchi Virtual Pet</header>
+            <h6>Words and Stuff</h6>
+        </div>
+        <div class="left">
+            <p>Game instructions</p>
+        </div>
+        <div class="gamestage">
+            <img id ="egg" src="../images/nada-egg.png">
+        </div>  
+        <div class="vitals">
+            <button id = "feed"><img class = "care" src="../images/fish.png"></button>
+            <button id = "sleep"><img class = "care" src="../images/moon.png"></button>
+            <button id = "play"><img class = "care" src="../images/game.png"></button>
+                <p>Hunger</p>
+                <p>Sleepiness</p>
+                <p>Boredom</p>
+                <p>Age</p>
+        </div>
+        
+        <div class="footer">
+            <img id ="pet" src="../images/cat.png">
+        </div>
     </div>
 </body>
 </html>
-
-<!-- Add buttons to the screen to:
-feed your pet
-turn off the light
-play with your pet. -->

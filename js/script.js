@@ -1,4 +1,4 @@
-alert("Your files are totally linked!")
+// alert("Your files are totally linked!");
 
 // Create an Object or Class for your Tamagotchi
 class Nadagotchi {
@@ -56,8 +56,11 @@ class Nadagotchi {
     }
 }
 // Instantiate your Tamagotchi
-
+const blackKitty = new Nadagotchi("Grump");
+console.log(blackKitty.vitals());
 // Add the ability to name your pet.
+// let petName = {};
+// let userInput = prompt("Congratulations on your new virtual pet! Now it's time for a name.")
 // Increase your pet's age every x minutes
 
 // Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.

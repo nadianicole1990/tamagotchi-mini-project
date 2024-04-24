@@ -1,14 +1,50 @@
-/* Display a character of your choice on the screen to represent your pet */
-/* Animate your pet across the screen while it's alive. */
-/* Display the following metrics for your pet:
-Hunger (1-10 scale)
-Sleepiness (1-10 scale)
-Boredom (1-10 scale)
-Age */
-/* Style the page */
-body {
-    color: whitesmoke
+.container {
+    display: grid;
+    grid-template-areas: 
+      'header header header header' 
+      'left main main right' 
+      'footer footer footer footer';
 }
+.top {
+    grid-area: header;
+    background-color: #190933;
+    padding: 5px;
+    color: #ACFCD9;
+    text-align: center;
+    font-size: 30px;
+}
+h6 {
+    font-size: 10px;
+}
+.left {
+    grid-area: left;
+    background-color: #665687;
+}
+.gamestage {
+    grid-area: main;
+    background-color: #665687;
+}
+#egg {
+    height: 700px;
+}
+.vitals {
+    grid-area: right;
+    background-color: #665687;
+}
+.care {
+    height: 50px;
+}
+.footer {
+    grid-area: footer;
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+#pet {
+    height: 150px;
+}
+
+/* Animate your pet across the screen while it's alive. */
 /* EXTRAS
 Option for different style eggs?
 */
