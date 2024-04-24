@@ -1,7 +1,60 @@
 alert("Your files are totally linked!")
 
 // Create an Object or Class for your Tamagotchi
-
+class Nadagotchi {
+    constructor (name) {
+        this.name = name;
+        this.age = 0;
+        this.hunger = 0;
+        this.sleepiness = 0;
+        this.boredom = 0;
+    }
+    growUp() {
+    // age++ every minute
+        setInterval(aging, 60000);
+        function aging() {
+            this.age = this.age++;
+        }
+    }
+    eat() {
+    // function linked to a button that, when clicked, "feeds" pet
+    // need event listener for click
+    // hunger--
+        const feedButton = document.querySelector(".feed");
+        feedButton.addEventListener("click", function() {
+            this.hunger = this.hunger--
+        })
+    }
+    sleep() {
+    // function linked to a button that, when clicked, pet "sleeps"
+    // need event listener for click
+    // duration of sleep: 5 seconds
+    // sleepiness--
+    const sleepButton = document.querySelector(".sleep");
+    sleepButton.addEventListener("click", function() {
+        this.sleepiness = this.sleepiness--
+    })
+    }
+    play() {
+    // function linked to a button that, when clicked, "feeds" pet
+    // need event listener for click
+    // duration of play: 5 seconds
+    // boredom--
+    const playButton = document.querySelector(".play");
+    playButton.addEventListener("click", function() {
+        this.boredom = this.boredom--
+    })
+    }
+    morph() {
+    // when age reaches 5, pet becomes sophisticated gentlepet (mustache)
+        if (this.age >= 5) {
+            // Working on it
+        }
+    }
+    vitals() {
+        return this.age, this.hunger, this. sleepiness, this.boredom
+    }
+}
 // Instantiate your Tamagotchi
 
 // Add the ability to name your pet.
@@ -13,9 +66,6 @@ alert("Your files are totally linked!")
 // Alert “Your pet has crossed the rainbow bridge”
 
 // Morph your pet at certain ages.
-
-// Animate your pet across the screen while it's alive.
-
 
 // EXTRAS
 // Have your Tamagotchi give birth to baby Tamagotchi...
