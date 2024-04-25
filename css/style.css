@@ -1,9 +1,13 @@
 .container {
     display: grid;
+    width: 100%;
+    height: 100%;
     grid-template-areas: 
       'header header header header' 
-      'left main main right' 
+      'left main main right1'
+      'left main main right2'
       'footer footer footer footer';
+    gap: 5px;
 }
 .top {
     grid-area: header;
@@ -16,35 +20,55 @@
 h6 {
     font-size: 10px;
 }
-.left {
+.instructions {
     grid-area: left;
-    background-color: #665687;
+    background-color: #ACFCD9;
 }
-.gamestage {
+.home {
     grid-area: main;
-    background-color: #665687;
+    align-items: center;
+    justify-items: center;
+    background-color: #665697;
 }
 #egg {
-    height: 700px;
+    height: 750px;
 }
-.vitals {
-    grid-area: right;
-    background-color: #665687;
+#kitty {
+    height: 150px;
+    animation: slide 10s infinite; 
+}
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-225px)
+    }
+    to {
+      transform: translateX(0)
+    }
+}
+.actions {
+    grid-area: right1;
+    background-color: #5DD9C1;
 }
 .care {
-    height: 50px;
+    height: 60px;
+}
+ul {
+    list-style-type: none;
+    color: #190933;
+}
+.vitals {
+    grid-area: right2;
+    background-color: #B084CC;
 }
 .footer {
     grid-area: footer;
-    background-color: #f1f1f1;
-    padding: 10px;
+    background-color: #190933;
+    color: #ACFCD9;
     text-align: center;
 }
-#pet {
-    height: 150px;
-}
-
-/* Animate your pet across the screen while it's alive. */
 /* EXTRAS
 Option for different style eggs?
 */

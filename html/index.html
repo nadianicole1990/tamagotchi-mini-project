@@ -11,26 +11,50 @@
     <div class="container">
         <div class="top">
             <header>Nadagotchi Virtual Pet</header>
-            <h6>Words and Stuff</h6>
         </div>
-        <div class="left">
-            <p>Game instructions</p>
+        <div class="instructions">
+            <h4>How to Play:</h4>
         </div>
-        <div class="gamestage">
+        <div class="home">
             <img id ="egg" src="../images/nada-egg.png">
-        </div>  
-        <div class="vitals">
-            <button id = "feed"><img class = "care" src="../images/fish.png"></button>
-            <button id = "sleep"><img class = "care" src="../images/moon.png"></button>
-            <button id = "play"><img class = "care" src="../images/game.png"></button>
-                <p>Hunger</p>
-                <p>Sleepiness</p>
-                <p>Boredom</p>
-                <p>Age</p>
+            <img id="kitty" src="../images/cat.png">
         </div>
-        
+        <div class="actions">
+            <ul>
+                <li>
+                    <p>Feed Me</p>
+                    <button id = "feed"><img class = "care" src="../images/fish.png"></button>
+                </li>
+                <li>
+                    <p>Naptime</p>
+                    <button id = "sleep"><img class = "care" src="../images/moon.png"></button>
+                </li>
+                <li>
+                    <p>Let's Play</p>
+                    <button id = "play"><img class = "care" src="../images/game.png"></button>
+                </li>
+            </ul>
+        </div>
+        <div class="vitals">
+            <div class="box">
+                <div>Age:</div>
+                <div id="agetarget"></div>
+            </div>
+            <div class="box">
+                <div>Hunger:</div>
+                <div id="hunger-target"></div>
+            </div>
+            <div class="box">
+                <div>Sleepiness:</div>
+                <div id="sleepy-target"></div>
+            </div>
+            <div class="box">
+                <div>Boredom:</div>
+                <div id="boredom-target"></div>
+            </div>
+        </div>
         <div class="footer">
-            <img id ="pet" src="../images/cat.png">
+            <p>Thank's for playing!</p>
         </div>
     </div>
 </body>

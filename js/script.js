@@ -58,6 +58,9 @@ class Nadagotchi {
 // Instantiate your Tamagotchi
 const blackKitty = new Nadagotchi("Grump");
 console.log(blackKitty.vitals());
+// Just figuring out how to work innerHTML
+const ageLog = document.getElementById("age-target");
+agetarget.innerHTML = 1;
 // Add the ability to name your pet.
 // let petName = {};
 // let userInput = prompt("Congratulations on your new virtual pet! Now it's time for a name.")
