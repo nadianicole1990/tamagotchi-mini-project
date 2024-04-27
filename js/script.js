@@ -1,5 +1,4 @@
 // alert("Your files are totally linked!");
-
 // Create an Object or Class for your Tamagotchi
 class Nadagotchi {
     constructor (name) {
@@ -10,68 +9,85 @@ class Nadagotchi {
         this.boredom = 0;
     }
     growUp() {
-    // age++ every minute
-        setInterval(aging, 60000);
-        function aging() {
-            this.age = this.age++;
+        if (this.age<=100 === true) {
+            this.age = this.age+=1;
+            return this.age;
         }
     }
-    eat() {
-    // function linked to a button that, when clicked, "feeds" pet
-    // need event listener for click
-    // hunger--
-        const feedButton = document.querySelector(".feed");
-        feedButton.addEventListener("click", function() {
-            this.hunger = this.hunger--
+    getHungry() {
+        for (let i=0; i<=10; i++) {
+            this.hunger = this.hunger+=1;
+            return this.hunger;
+        }
+    }
+    getSleepy() {
+        for (let i=0; i<=10; i++) {
+            this.sleepiness = this.sleepiness+=1;
+            return this.sleepiness;
+        }
+    }
+    getBored() {
+        for (let i=0; i<=10; i++) {
+            this.boredom = this.boredom+=1;
+            return this.boredom;
+        }
+    }
+    feed() {
+        // function linked to a button that, when clicked, "feeds" pet
+        // need event listener for click
+        // hunger--
+            const feedButton = document.querySelector(".feed");
+            feedButton.addEventListener("click", function() {
+                this.hunger = this.hunger--
+            })
+        }
+    sleep() {
+        // function linked to a button that, when clicked, pet "sleeps"
+        // need event listener for click
+        // duration of sleep: 5 seconds
+        // sleepiness--
+        const sleepButton = document.querySelector(".sleep");
+        sleepButton.addEventListener("click", function() {
+            this.sleepiness = this.sleepiness--
         })
     }
-    sleep() {
-    // function linked to a button that, when clicked, pet "sleeps"
-    // need event listener for click
-    // duration of sleep: 5 seconds
-    // sleepiness--
-    const sleepButton = document.querySelector(".sleep");
-    sleepButton.addEventListener("click", function() {
-        this.sleepiness = this.sleepiness--
-    })
-    }
     play() {
-    // function linked to a button that, when clicked, "feeds" pet
-    // need event listener for click
-    // duration of play: 5 seconds
-    // boredom--
-    const playButton = document.querySelector(".play");
-    playButton.addEventListener("click", function() {
-        this.boredom = this.boredom--
-    })
-    }
-    morph() {
-    // when age reaches 5, pet becomes sophisticated gentlepet (mustache)
-        if (this.age >= 5) {
-            // Working on it
-        }
-    }
-    vitals() {
-        return this.age, this.hunger, this. sleepiness, this.boredom
+        // function linked to a button that, when clicked, "feeds" pet
+        // need event listener for click
+        // duration of play: 5 seconds
+        // boredom--
+        const playButton = document.querySelector(".play");
+        playButton.addEventListener("click", function() {
+            this.boredom = this.boredom--
+        })
     }
 }
 // Instantiate your Tamagotchi
 const blackKitty = new Nadagotchi("Grump");
-console.log(blackKitty.vitals());
-// Just figuring out how to work innerHTML
-const ageLog = document.getElementById("age-target");
-agetarget.innerHTML = 1;
 // Add the ability to name your pet.
-// let petName = {};
-// let userInput = prompt("Congratulations on your new virtual pet! Now it's time for a name.")
+const nameOfPet = prompt("Name your pet!");
+nametarget.innerHTML = "Name: " + nameOfPet
 // Increase your pet's age every x minutes
-
+setInterval(blackKitty.growUp(), 5000);
 // Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
-
+setInterval(blackKitty.getHungry(), 5000);
+setInterval(blackKitty.getSleepy(), 5000);
+setInterval(blackKitty.getBored(), 5000);
+// Display metrics for pet
+const ageLog = document.getElementById("agetarget");
+agetarget.innerHTML = blackKitty.age;
+const hungerLog = document.getElementById("hungertarget");
+hungertarget.innerHTML = blackKitty.hunger;
+const sleepLog = document.getElementById("sleeptarget");
+sleeptarget.innerHTML = blackKitty.sleepiness;
+const boredLog = document.getElementById("boredtarget");
+boredtarget.innerHTML = blackKitty.boredom;
 // You pet should die if Hunger, Boredom, or Sleepiness hits 10.
-// Alert “Your pet has crossed the rainbow bridge”
-
-// Morph your pet at certain ages.
+function petDies() {
+    if (blackKitty.hunger >= 10 || blackKitty.sleepiness >= 10 || blackKitty.boredom >= 10) {
+        alert("Your pet has crossed the rainbow bridge.");
+    }
+}
 
 // EXTRAS
 // Have your Tamagotchi give birth to baby Tamagotchi...
