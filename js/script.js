@@ -9,27 +9,46 @@ class Nadagotchi {
         this.boredom = 0;
     }
     growUp() {
-        this.age++
-        return this.age;
+            this.age++
+            return this.age;
     }
     getHungry() {
+        console.log("Hi, I am get hungry.")
+        if (this.hunger < 10) {
             this.hunger++;
             return this.hunger;
+        }
     }
     getSleepy() {
+        if (this.sleepiness < 10) {
             this.sleepiness++;
             return this.sleepiness;
+        }
     }
     getBored() {
+        if (this.boredom < 10) {
             this.boredom++;
             return this.boredom;
+        }
     }
+    morph() {
+        console.log("Hi, I am morph.")
+        if (this.age === 5) {
+            console.log("Time to morph!")
+        }
+    }
+    // rainbowBridge() {
+    //     console.log("Hi, I am rainbow bridge.")
+    //     if (this.hunger === 10) {
+    //         console.log("We should die now.");
+    //     }
+    // }
 }
 // Instantiate your Tamagotchi
 const blackKitty = new Nadagotchi("Grump");
 // Add the ability to name your pet.
-// const nameOfPet = prompt("Name your pet!");
-// nametarget.innerHTML = "Name: " + nameOfPet
+const nameOfPet = prompt("Name your pet!");
+nametarget.innerHTML = "Name: " + nameOfPet
 // Display metrics for pet
 setInterval(function(){
     const ageLog = document.getElementById("agetarget");
@@ -42,16 +61,17 @@ setInterval(function(){
     boredtarget.innerHTML = blackKitty.boredom;
 }, 1000)
 // Increase your pet's age every x minutes
-setInterval(function() {
+agingInterval = setInterval(function() {
     blackKitty.growUp();
-}, 10000)
+}, 4000)
 // Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
-metricsInterval = setInterval(function() {
+metricInterval = setInterval(function() {
     blackKitty.getHungry();
     blackKitty.getSleepy();
     blackKitty.getBored();
-}, 5000)
-// You pet should die if Hunger, Boredom, or Sleepiness hits 10.
+    // Morph your pet at certain ages.
+    blackKitty.morph();
+}, 2000)
 const feedButton = document.querySelector("#feed");
 feedButton.addEventListener("click", feed);
 function feed() {
@@ -70,8 +90,18 @@ function play() {
     blackKitty.boredom-=1;
     return blackKitty.boredom;
 }
+petDies = setInterval(function() {
+    rainbowBridge();
+}, 1000);
 function rainbowBridge() {
-    clearInterval(metricsInterval);
+    console.log("Hi, I am rainbow bridge.")
+    if (blackKitty.hunger === 10 || blackKitty.sleepiness === 10 || blackKitty.boredom === 10) {
+        console.log("We should die now.");
+        clearInterval(metricInterval);
+        clearInterval(agingInterval);
+        clearInterval(petDies);
+        alert(nameOfPet + " has crossed the rainbow bridge :(");
+    }
 }
 // EXTRAS
 // Have your Tamagotchi give birth to baby Tamagotchi...
