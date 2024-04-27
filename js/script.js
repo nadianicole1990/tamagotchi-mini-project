@@ -9,26 +9,24 @@ class Nadagotchi {
         this.boredom = 0;
     }
     growUp() {
-        if (this.age<=100 === true) {
-            this.age = this.age+=1;
-            return this.age;
-        }
+        this.age++
+        return this.age;
     }
     getHungry() {
         for (let i=0; i<=10; i++) {
-            this.hunger = this.hunger+=1;
+            this.hunger++;
             return this.hunger;
         }
     }
     getSleepy() {
         for (let i=0; i<=10; i++) {
-            this.sleepiness = this.sleepiness+=1;
+            this.sleepiness++;
             return this.sleepiness;
         }
     }
     getBored() {
         for (let i=0; i<=10; i++) {
-            this.boredom = this.boredom+=1;
+            this.boredom++;
             return this.boredom;
         }
     }
@@ -38,7 +36,7 @@ class Nadagotchi {
         // hunger--
             const feedButton = document.querySelector(".feed");
             feedButton.addEventListener("click", function() {
-                this.hunger = this.hunger--
+                this.hunger--
             })
         }
     sleep() {
@@ -65,23 +63,29 @@ class Nadagotchi {
 // Instantiate your Tamagotchi
 const blackKitty = new Nadagotchi("Grump");
 // Add the ability to name your pet.
-const nameOfPet = prompt("Name your pet!");
-nametarget.innerHTML = "Name: " + nameOfPet
-// Increase your pet's age every x minutes
-setInterval(blackKitty.growUp(), 5000);
-// Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
-setInterval(blackKitty.getHungry(), 5000);
-setInterval(blackKitty.getSleepy(), 5000);
-setInterval(blackKitty.getBored(), 5000);
+// const nameOfPet = prompt("Name your pet!");
+// nametarget.innerHTML = "Name: " + nameOfPet
+setInterval(function() {
+    // Increase your pet's age every x minutes
+    blackKitty.growUp();
+}, 60000)
+setInterval(function() {
+    // Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
+    blackKitty.getHungry();
+    blackKitty.getSleepy();
+    blackKitty.getBored();
+}, 5000)
 // Display metrics for pet
-const ageLog = document.getElementById("agetarget");
-agetarget.innerHTML = blackKitty.age;
-const hungerLog = document.getElementById("hungertarget");
-hungertarget.innerHTML = blackKitty.hunger;
-const sleepLog = document.getElementById("sleeptarget");
-sleeptarget.innerHTML = blackKitty.sleepiness;
-const boredLog = document.getElementById("boredtarget");
-boredtarget.innerHTML = blackKitty.boredom;
+setInterval(function(){
+    const ageLog = document.getElementById("agetarget");
+    agetarget.innerHTML = blackKitty.age;
+    const hungerLog = document.getElementById("hungertarget");
+    hungertarget.innerHTML = blackKitty.hunger;
+    const sleepLog = document.getElementById("sleeptarget");
+    sleeptarget.innerHTML = blackKitty.sleepiness;
+    const boredLog = document.getElementById("boredtarget");
+    boredtarget.innerHTML = blackKitty.boredom;
+}, 1000)
 // You pet should die if Hunger, Boredom, or Sleepiness hits 10.
 function petDies() {
     if (blackKitty.hunger >= 10 || blackKitty.sleepiness >= 10 || blackKitty.boredom >= 10) {

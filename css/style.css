@@ -1,7 +1,6 @@
 .container {
     display: grid;
     width: 100%;
-    height: 100%;
     grid-template-areas: 
       'header header header header header'
       'words words words words words'
@@ -35,22 +34,22 @@ h6 {
 #egg {
     height: 500px;
     position: absolute;
-    align-items: center;
-    justify-items: center;
     z-index: 1;
 }
 #kitty {
     height: 75px;
     position: absolute;
     z-index: 2;
-    animation: slide 10s infinite; 
+    top: 400px;
+    left: 90px;
+    animation: slide 20s infinite;
 }
 @keyframes slide {
     from {
       transform: translateX(0);
     }
     50% {
-      transform: translateX(225px)
+      transform: translateX(165px)
     }
     to {
       transform: translateX(0)
