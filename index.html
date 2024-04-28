@@ -5,36 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <title>Tamagotchi Mini Project</title>
 </head>
 <body>
     <div class="container">
         <div class="top">
-            <header>Nadagotchi Virtual Pet</header>
+            <img id="title" src="./images/title.png">
         </div>
         <div class="instructions">
-            <h4>How to Play:</h4>
-        </div>
-        <div class="home">
-            <div id ="nametarget"></div>
-            <img id ="egg" src="./images/nada-egg.png">
-            <img id="kitty" src="./images/cat.png">
-        </div>
-        <div class="actions">
+            <h4>Rules of Engagement:</h4>
             <ul>
                 <li>
-                    <p>Feed Me</p>
-                    <button type = "button" id = "feed"><img class = "care" src="./images/fish.png"></button>
+                    Click the buttons to make your pet eat, sleep, and play!
                 </li>
                 <li>
-                    <p>Naptime</p>
-                    <button type = "button" id = "sleep"><img class = "care" src="./images/moon.png"></button>
+                    If your pet reaches age 5, they will become a sophisticated gentlepet.
                 </li>
                 <li>
-                    <p>Let's Play</p>
-                    <button type = "button" id = "play"><img class = "care" src="./images/game.png"></button>
+                    If your pet's hunger, sleepiness, or boredom reach 10, they will have to cross the rainbow bridge.
                 </li>
             </ul>
+        </div>
+        <div class="home">
+            <div id="nametarget"></div>
+            <img id="egg" src="./images/nada-egg.png">
+            <img id="kitty" src="./images/cat.png">
+            <img id="cat" src="./images/gentlecat.png">
+        </div>
+        <div class="actions">
+            <button type = "button" id = "feed"><img class = "care" src="./images/eat.png"></button>
+            <button type = "button" id = "sleep"><img class = "care" src="./images/sleep.png"></button>
+            <button type = "button" id = "play"><img class = "care" src="./images/play.png"></button>
         </div>
         <div class="vitals">
             <div class="box">
@@ -55,7 +59,7 @@
             </div>
         </div>
         <div class="footer">
-            <p>Thank's for playing!</p>
+            <p>Thank you for playing!</p>
         </div>
     </div>
 </body>

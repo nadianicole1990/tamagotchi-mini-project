@@ -13,7 +13,6 @@ class Nadagotchi {
             return this.age;
     }
     getHungry() {
-        console.log("Hi, I am get hungry.")
         if (this.hunger < 10) {
             this.hunger++;
             return this.hunger;
@@ -31,25 +30,13 @@ class Nadagotchi {
             return this.boredom;
         }
     }
-    morph() {
-        console.log("Hi, I am morph.")
-        if (this.age === 5) {
-            console.log("Time to morph!")
-        }
-    }
-    // rainbowBridge() {
-    //     console.log("Hi, I am rainbow bridge.")
-    //     if (this.hunger === 10) {
-    //         console.log("We should die now.");
-    //     }
-    // }
 }
 // Instantiate your Tamagotchi
 const blackKitty = new Nadagotchi("Grump");
 // Add the ability to name your pet.
 const nameOfPet = prompt("Name your pet!");
 nametarget.innerHTML = "Name: " + nameOfPet
-// Display metrics for pet
+// Display metrics for pet: setInterval updates HTML for metrics every second
 setInterval(function(){
     const ageLog = document.getElementById("agetarget");
     agetarget.innerHTML = blackKitty.age;
@@ -69,8 +56,6 @@ metricInterval = setInterval(function() {
     blackKitty.getHungry();
     blackKitty.getSleepy();
     blackKitty.getBored();
-    // Morph your pet at certain ages.
-    blackKitty.morph();
 }, 2000)
 const feedButton = document.querySelector("#feed");
 feedButton.addEventListener("click", feed);
@@ -90,11 +75,28 @@ function play() {
     blackKitty.boredom-=1;
     return blackKitty.boredom;
 }
+// Morph your pet at certain ages.
+petMorphs = setInterval(function() {
+    morph();
+}, 1000);
+function morph() {
+    if (blackKitty.age >= 5) {
+        console.log("I should morph");
+        let babyPic = document.getElementById("#kitty");
+        let bigBoyPic = document.getElementById("#cat");
+        babyPic.setAttribute(visibility, "hidden");
+        bigBoyPic.setAttribute(visibility, "visible");
+        // babyPic.style.visibility = "hidden";
+        // bigBoyPic.style.visibility = "visible";
+        // babyPic.src = "./images/gentlecat.png"
+        // babyPic.setAttribute("src", "./images/gentlecat.png");
+
+    }
+}
 petDies = setInterval(function() {
     rainbowBridge();
 }, 1000);
 function rainbowBridge() {
-    console.log("Hi, I am rainbow bridge.")
     if (blackKitty.hunger === 10 || blackKitty.sleepiness === 10 || blackKitty.boredom === 10) {
         console.log("We should die now.");
         clearInterval(metricInterval);

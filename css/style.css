@@ -6,75 +6,110 @@
       'words words words words words'
       'main main main right1 right1'
       'main main main right2 right2'
+      'main main main right3 right3'
       'footer footer footer footer footer';
     gap: 5px;
 }
 .top {
     grid-area: header;
-    background-color: #190933;
-    padding: 5px;
-    color: #ACFCD9;
     text-align: center;
-    font-size: 30px;
 }
-h6 {
-    font-size: 10px;
+#title {
+    height: 100px;
 }
 .instructions {
-    grid-area: words;
+    grid-area: right1;
+    padding: 20px;
     background-color: #ACFCD9;
+}
+h4 {
+    font-family: 'Julius Sans One';
+    font-weight: bolder;
+}
+ul {
+    font-family: 'Julius Sans One';
+    font-size: small;
+    font-weight: bolder;
 }
 .home {
     grid-area: main;
+    height: auto;
     background-color: #665697;
 }
 #nametarget {
-    align-items: center;
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+    font-family: 'Julius Sans One';
+    font-weight: bolder;
+    color:#ACFCD9;
 }
 #egg {
     height: 500px;
-    position: absolute;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
     z-index: 1;
 }
 #kitty {
+    visibility: visible;
+    height: 75px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2;
+    animation: slide 10s infinite;
+}
+#cat {
+    visibility: hidden;
     height: 75px;
     position: absolute;
-    z-index: 2;
-    top: 400px;
-    left: 90px;
+    z-index: 3;
+    bottom: 400px;
+    left: 142.5px;
     animation: slide 20s infinite;
 }
 @keyframes slide {
     from {
-      transform: translateX(0);
+      transform: translateX(82.5px);
     }
     50% {
-      transform: translateX(165px)
+      transform: translateX(-82.5px)
     }
     to {
-      transform: translateX(0)
+      transform: translateX(82.5px)
     }
 }
 .actions {
-    grid-area: right1;
+    grid-area: right2;
+    padding: 58px;
     background-color: #B084CC;
+    text-align: center;
 }
 .care {
-    height: 60px;
+    height: 125px;
+}
+button {
+    margin: 0 20px 0;
 }
 ul {
-    list-style-type: none;
     color: #190933;
 }
 .vitals {
-    grid-area: right2;
+    grid-area: right3;
+    padding: 20px;
     background-color: #5DD9C1;
+    font-family: 'Julius Sans One';
+    text-align: center;
 }
 .footer {
     grid-area: footer;
     background-color: #190933;
+    font-family: 'Julius Sans One';
     color: #ACFCD9;
     text-align: center;
+    font-weight: bolder;
 }
 /* EXTRAS
 Option for different style eggs?
