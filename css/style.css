@@ -17,6 +17,21 @@
 #title {
     height: 100px;
 }
+#name {
+    grid-area: words;
+    background-color:#190933;
+    width: 100%;
+}
+#nametarget {
+    display: block;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    font-family: 'Julius Sans One';
+    font-size: x-large;
+    font-weight: bolder;
+    color:#ACFCD9;
+    background-color:#190933
+}
 .instructions {
     grid-area: right1;
     padding: 20px;
@@ -33,52 +48,45 @@ ul {
 }
 .home {
     grid-area: main;
-    height: auto;
-    background-color: #665697;
-}
-#nametarget {
-    display: block;
-    text-align: center;
-    padding-top: 10px;
-    font-family: 'Julius Sans One';
-    font-weight: bolder;
-    color:#ACFCD9;
+    width: auto;
+    /* background-color: #665697; */
 }
 #egg {
     height: 500px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 10px;
+    padding-top: 25px;
     z-index: 1;
 }
 #kitty {
     visibility: visible;
-    height: 75px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 2;
+    height: 100px;
+    position: absolute;
+    z-index: 3;
+    text-align: center;
+    bottom: 400px;
+    left: 140px;
     animation: slide 10s infinite;
 }
 #cat {
     visibility: hidden;
-    height: 75px;
+    height: 125px;
     position: absolute;
     z-index: 3;
     bottom: 400px;
-    left: 142.5px;
-    animation: slide 20s infinite;
+    left: 140px;
+    animation: slide 10s infinite;
 }
 @keyframes slide {
     from {
-      transform: translateX(82.5px);
+      transform: translateX(80px);
     }
     50% {
-      transform: translateX(-82.5px)
+      transform: translateX(-80px)
     }
     to {
-      transform: translateX(82.5px)
+      transform: translateX(80px)
     }
 }
 .actions {
@@ -92,9 +100,7 @@ ul {
 }
 button {
     margin: 0 20px 0;
-}
-ul {
-    color: #190933;
+    border-radius: 25%;
 }
 .vitals {
     grid-area: right3;

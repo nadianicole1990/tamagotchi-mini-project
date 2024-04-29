@@ -35,7 +35,7 @@ class Nadagotchi {
 const blackKitty = new Nadagotchi("Grump");
 // Add the ability to name your pet.
 const nameOfPet = prompt("Name your pet!");
-nametarget.innerHTML = "Name: " + nameOfPet
+nametarget.innerHTML = "Hello, My Name is " + nameOfPet + "!"
 // Display metrics for pet: setInterval updates HTML for metrics every second
 setInterval(function(){
     const ageLog = document.getElementById("agetarget");
@@ -81,13 +81,10 @@ petMorphs = setInterval(function() {
 }, 1000);
 function morph() {
     if (blackKitty.age >= 5) {
-        console.log("I should morph");
-        let babyPic = document.getElementById("#kitty");
-        let bigBoyPic = document.getElementById("#cat");
-        babyPic.setAttribute(visibility, "hidden");
-        bigBoyPic.setAttribute(visibility, "visible");
-        // babyPic.style.visibility = "hidden";
-        // bigBoyPic.style.visibility = "visible";
+        let babyPic = document.getElementById("kitty");
+        let bigBoyPic = document.getElementById("cat");
+        babyPic.style.visibility = "hidden";
+        bigBoyPic.style.visibility = "visible";
         // babyPic.src = "./images/gentlecat.png"
         // babyPic.setAttribute("src", "./images/gentlecat.png");
 
@@ -98,7 +95,6 @@ petDies = setInterval(function() {
 }, 1000);
 function rainbowBridge() {
     if (blackKitty.hunger === 10 || blackKitty.sleepiness === 10 || blackKitty.boredom === 10) {
-        console.log("We should die now.");
         clearInterval(metricInterval);
         clearInterval(agingInterval);
         clearInterval(petDies);
