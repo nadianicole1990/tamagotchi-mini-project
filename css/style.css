@@ -65,7 +65,7 @@ ul {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 25px;
+    padding-top: 35px;
     z-index: 1;
 }
 #altegg {
@@ -75,7 +75,7 @@ ul {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 25px;
+    padding-top: 35px;
     z-index: 1;
 }
 #lightsout {
@@ -85,7 +85,7 @@ ul {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 25px;
+    padding-top: 35px;
     z-index: 1;
 }
 #kitty {
@@ -148,6 +148,7 @@ ul {
     grid-area: right2;
     background-color: #B084CC;
     text-align: center;
+    padding: 0 20px 20px 20px;
 }
 .care {
     height: 125px;
@@ -155,6 +156,7 @@ ul {
 .gameplay {
     margin: 0 20px 0 0;
     background-color: white;
+    border-radius: 20%;
 }
 .vitals {
     grid-area: right3;
@@ -162,6 +164,47 @@ ul {
     background-color: #5DD9C1;
     font-family: 'Julius Sans One';
     text-align: center;
+}
+.age {
+    display: inline-block;
+}
+
+#agetag {
+    background-color: #190933;
+    color: white;
+    padding: 5px;
+}
+.hunger {
+    display: inline-block;
+}
+#hungertag {
+    background-color: #190933;
+    color: white;
+    padding: 5px;
+}
+.sleepiness {
+    display: inline-block;
+}
+#sleeptag {
+    background-color: #190933;
+    color: white;
+    padding: 5px;
+}
+.boredom {
+    display: inline-block;
+}
+#boredtag {
+    background-color: #190933;
+    color: white;
+    padding: 5px;
+}
+.chonkiness {
+    display: inline-block;
+}
+#chonktag {
+    background-color: #190933;
+    color: white;
+    padding: 5px;
 }
 .footer {
     grid-area: footer;

@@ -132,7 +132,7 @@ petMorphs = setInterval(function() {
     morph();
 }, 1000);
 function morph() {
-    if (blackKitty.age > 5 && blackKitty.hunger < 10 && blackKitty.sleepiness < 10 && blackKitty.boredom < 10 && blackKitty.chonkiness < 10) {
+    if (blackKitty.age >= 5 && blackKitty.hunger < 10 && blackKitty.sleepiness < 10 && blackKitty.boredom < 10 && blackKitty.chonkiness < 10) {
         babyPic.style.visibility = "hidden";
         bigBoyPic.style.visibility = "visible";
     }
