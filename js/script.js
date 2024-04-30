@@ -70,7 +70,7 @@ setInterval(function(){
     boredtarget.innerHTML = blackKitty.boredom;
     const chonkLog = document.getElementById("chonktarget");
     chonktarget.innerHTML = blackKitty.chonkiness;
-}, 1000)
+}, 50)
 // Increase your pet's age every x minutes
 agingInterval = setInterval(function() {
     blackKitty.growUp();
@@ -81,30 +81,38 @@ metricInterval = setInterval(function() {
     blackKitty.getSleepy();
     blackKitty.getBored();
     blackKitty.getChonky();
-}, 1000)
+}, 4000)
 const feedButton = document.querySelector("#feed");
 feedButton.addEventListener("click", feed);
 function feed() {
-    blackKitty.hunger-=1;
-    return blackKitty.hunger;
+    if (blackKitty.hunger > 0) {
+        blackKitty.hunger-=1;
+        return blackKitty.hunger;
+    }
 }
 const sleepButton = document.querySelector("#sleep");
 sleepButton.addEventListener("click", sleep); 
 function sleep() {
-    blackKitty.sleepiness-=1;
-    return blackKitty.sleepiness;
+    if (blackKitty.sleepiness > 0) {
+        blackKitty.sleepiness-=1;
+        return blackKitty.sleepiness;
+    }
 }
 const playButton = document.querySelector("#play");
 playButton.addEventListener("click", play); 
 function play() {
-    blackKitty.boredom-=1;
-    return blackKitty.boredom;
+    if (blackKitty.boredom > 0) {
+        blackKitty.boredom-=1;
+        return blackKitty.boredom;
+    }
 }
 const exerciseButton = document.querySelector("#exercise");
 exerciseButton.addEventListener("click", exercise); 
 function exercise() {
-    blackKitty.chonkiness-=1;
-    return blackKitty.chonkiness;
+    if (blackKitty.chonkiness > 0) {
+        blackKitty.chonkiness-=1;
+        return blackKitty.chonkiness;
+    }
 }
 let babyPic = document.getElementById("kitty");
 let bigBoyPic = document.getElementById("cat");
@@ -113,7 +121,7 @@ petMorphs = setInterval(function() {
     morph();
 }, 1000);
 function morph() {
-    if (blackKitty.age > 5) {
+    if (blackKitty.age >= 5 && blackKitty.hunger < 10 && blackKitty.sleepiness < 10 && blackKitty.boredom < 10 && blackKitty.chonkiness < 10) {
         babyPic.style.visibility = "hidden";
         bigBoyPic.style.visibility = "visible";
     }
@@ -129,9 +137,16 @@ function rainbowBridge() {
         clearInterval(petDies);
         babyPic.style.visibility = "hidden";
         bigBoyPic.style.visibility = "hidden";
-        alert(nameOfPet + " has crossed the rainbow bridge :(");
+        let deadKittyPic = document.getElementById("deadkitty");
+        let deadCatPic = document.getElementById("deadcat");
+        if (blackKitty.age < 5) {
+            deadKittyPic.style.visibility = "visible";
+        } else {
+                deadCatPic.style.visibility = "visible";
+            }
+        setTimeout(function() {
+            alert(nameOfPet + " has crossed the rainbow bridge :(")}, 500);
     }
 }
 // EXTRAS
-// Have your Tamagotchi give birth to baby Tamagotchi...
 // ...with special powers (extend the class)!

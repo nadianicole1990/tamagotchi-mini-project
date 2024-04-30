@@ -34,12 +34,16 @@
 }
 .instructions {
     grid-area: right1;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     background-color: #ACFCD9;
 }
 h4 {
     font-family: 'Julius Sans One';
     font-weight: bolder;
+    background-color: white;
+    color: #190933;
+    text-align: center;
+    padding: 10px 0 10px 0;
 }
 ul {
     font-family: 'Julius Sans One';
@@ -52,6 +56,7 @@ ul {
 .eggstyle {
     margin-top: 10px;
     text-align: center;
+    font-family: 'Julius Sans One';
 }
 #egg {
     visibility: visible;
@@ -92,6 +97,22 @@ ul {
     left: 155px;
     animation: slide 10s infinite;
 }
+#deadcat {
+    visibility: hidden;
+    height: 125px;
+    position: absolute;
+    z-index: 3;
+    bottom: 250px;
+    left: 155px;
+}
+#deadkitty {
+    visibility: hidden;
+    height: 125px;
+    position: absolute;
+    z-index: 3;
+    bottom: 250px;
+    left: 155px;
+}
 @keyframes slide {
     from {
       transform: translateX(70px);
@@ -103,15 +124,9 @@ ul {
       transform: translateX(70px)
     }
 }
-h4 {
-    background-color: #190933;
-    color: #ACFCD9;
-    text-align: center;
-    padding: 10px 0 10px 0;
-}
 .actions {
     grid-area: right2;
-    padding: 58px;
+    padding: 0 20px 20px 20px;
     background-color: #B084CC;
     text-align: center;
 }
@@ -120,12 +135,11 @@ h4 {
 }
 .gameplay {
     margin: 0 20px 0 0;
-    border-radius: 25%;
     background-color: white;
 }
 .vitals {
     grid-area: right3;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     background-color: #5DD9C1;
     font-family: 'Julius Sans One';
     text-align: center;
