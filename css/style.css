@@ -1,12 +1,15 @@
+/* Style the page. */
 .container {
     display: grid;
     width: 100%;
     grid-template-areas: 
       'header header header header header'
-      'words words words words words'
-      'main main main right1 right1'
-      'main main main right2 right2'
-      'main main main right3 right3'
+      'main1 main1 main1 right1 right1'
+      'main2 main2 main2 right1 right1'
+      'main2 main2 main2 right2 right2'
+      'main2 main2 main2 right2 right2'
+      'main2 main2 main2 right3 right3'
+      'main3 main3 main3 right3 right3'
       'footer footer footer footer footer';
     gap: 5px;
 }
@@ -15,22 +18,7 @@
     text-align: center;
 }
 #title {
-    height: 100px;
-}
-#name {
-    grid-area: words;
-    background-color:#190933;
-    width: 100%;
-}
-#nametarget {
-    display: block;
-    text-align: center;
-    padding: 10px 0 10px 0;
-    font-family: 'Julius Sans One';
-    font-size: x-large;
-    font-weight: bolder;
-    color:#ACFCD9;
-    background-color:#190933
+    height: 150px;
 }
 .instructions {
     grid-area: right1;
@@ -50,13 +38,25 @@ ul {
     font-size: small;
     font-weight: bolder;
 }
-.home {
-    grid-area: main;
+.namehome {
+    grid-area: main1;
+    display: block;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    font-family: 'Julius Sans One';
+    font-size: x-large;
+    font-weight: bolder;
+    color:#ACFCD9;
+    background-color:#190933
 }
-.eggstyle {
-    margin-top: 10px;
+#namepet {
+    margin-bottom: 10px;
     text-align: center;
     font-family: 'Julius Sans One';
+}
+.egghome {
+    grid-area: main2;
+    height: 550px;
 }
 #egg {
     visibility: visible;
@@ -78,14 +78,25 @@ ul {
     padding-top: 25px;
     z-index: 1;
 }
+#lightsout {
+    visibility: hidden;
+    height: 500px;
+    position: absolute;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 25px;
+    z-index: 1;
+}
 #kitty {
     visibility: visible;
     height: 100px;
     position: absolute;
-    z-index: 3;
+    z-index: 2;
     text-align: center;
     bottom: 250px;
     left: 155px;
+    /* Animate your pet across the screen while it's alive. */
     animation: slide 10s infinite;
 }
 #cat {
@@ -95,6 +106,7 @@ ul {
     z-index: 3;
     bottom: 250px;
     left: 155px;
+    /* Animate your pet across the screen while it's alive. */
     animation: slide 10s infinite;
 }
 #deadcat {
@@ -124,9 +136,16 @@ ul {
       transform: translateX(70px)
     }
 }
+.eggstylehome {
+    grid-area: main3;
+}
+.eggstyle {
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Julius Sans One';
+}
 .actions {
     grid-area: right2;
-    padding: 0 20px 20px 20px;
     background-color: #B084CC;
     text-align: center;
 }
@@ -152,6 +171,3 @@ ul {
     text-align: center;
     font-weight: bolder;
 }
-/* EXTRAS
-Option for different style eggs?
-*/

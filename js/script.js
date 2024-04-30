@@ -41,8 +41,12 @@ class Nadagotchi {
 // Instantiate your Tamagotchi
 const blackKitty = new Nadagotchi("Grump");
 // Add the ability to name your pet.
-const nameOfPet = prompt("Name your pet!");
-nametarget.innerHTML = "Hello, My Name is " + nameOfPet + "!"
+const nameButton = document.querySelector("#namepet");
+nameButton.addEventListener("click", getName);
+function getName() {
+    nameOfPet = prompt("Name your pet!");
+    return nametarget.innerHTML = "Hello, My Name is " + nameOfPet + "!";
+}
 // Change egg style
 let lightEgg = document.getElementById("egg");
 let darkEgg = document.getElementById("altegg");
@@ -58,8 +62,8 @@ function darkMode() {
     lightEgg.style.visibility = "hidden";
     darkEgg.style.visibility = "visible";
 }
-// Display metrics for pet: setInterval updates HTML for metrics every second
-setInterval(function(){
+// Display metrics for pet: setInterval updates HTML for metrics
+setInterval(function() {
     const ageLog = document.getElementById("agetarget");
     agetarget.innerHTML = blackKitty.age;
     const hungerLog = document.getElementById("hungertarget");
@@ -90,10 +94,14 @@ function feed() {
         return blackKitty.hunger;
     }
 }
+// let lightsOutEgg = document.getElementById("lightsout")
 const sleepButton = document.querySelector("#sleep");
 sleepButton.addEventListener("click", sleep); 
 function sleep() {
     if (blackKitty.sleepiness > 0) {
+        // lightEgg.style.visibility = "hidden";
+        // darkEgg.style.visibility = "hidden";
+        // lightsOutEgg.style.visibility = "visible";
         blackKitty.sleepiness-=1;
         return blackKitty.sleepiness;
     }
@@ -106,11 +114,15 @@ function play() {
         return blackKitty.boredom;
     }
 }
+// Add an exercise() method to your Tamagotchi, that affects certain properties
 const exerciseButton = document.querySelector("#exercise");
 exerciseButton.addEventListener("click", exercise); 
 function exercise() {
-    if (blackKitty.chonkiness > 0) {
+    if (blackKitty.chonkiness > 0 && blackKitty.boredom > 0) {
         blackKitty.chonkiness-=1;
+        blackKitty.boredom-=1;
+        blackKitty.hunger++;
+        blackKitty.sleepiness++;
         return blackKitty.chonkiness;
     }
 }
@@ -121,7 +133,7 @@ petMorphs = setInterval(function() {
     morph();
 }, 1000);
 function morph() {
-    if (blackKitty.age >= 5 && blackKitty.hunger < 10 && blackKitty.sleepiness < 10 && blackKitty.boredom < 10 && blackKitty.chonkiness < 10) {
+    if (blackKitty.age > 5 && blackKitty.hunger < 10 && blackKitty.sleepiness < 10 && blackKitty.boredom < 10 && blackKitty.chonkiness < 10) {
         babyPic.style.visibility = "hidden";
         bigBoyPic.style.visibility = "visible";
     }
@@ -139,7 +151,7 @@ function rainbowBridge() {
         bigBoyPic.style.visibility = "hidden";
         let deadKittyPic = document.getElementById("deadkitty");
         let deadCatPic = document.getElementById("deadcat");
-        if (blackKitty.age < 5) {
+        if (blackKitty.age <= 5) {
             deadKittyPic.style.visibility = "visible";
         } else {
                 deadCatPic.style.visibility = "visible";
