@@ -118,9 +118,8 @@ function play() {
 const exerciseButton = document.querySelector("#exercise");
 exerciseButton.addEventListener("click", exercise); 
 function exercise() {
-    if (blackKitty.chonkiness > 0 && blackKitty.boredom > 0) {
+    if (blackKitty.chonkiness > 0) {
         blackKitty.chonkiness-=1;
-        blackKitty.boredom-=1;
         blackKitty.hunger++;
         blackKitty.sleepiness++;
         return blackKitty.chonkiness;
@@ -157,7 +156,7 @@ function rainbowBridge() {
                 deadCatPic.style.visibility = "visible";
             }
         setTimeout(function() {
-            alert(nameOfPet + " has crossed the rainbow bridge :(")}, 500);
+            alert("Your virtual pet has crossed the rainbow bridge :(")}, 500);
     }
 }
 // EXTRAS
